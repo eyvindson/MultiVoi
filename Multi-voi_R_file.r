@@ -44,7 +44,7 @@ k <- 0:(y0-1)
 EYcond <- (lambda-sum((k*dpois(k,lambda))))/(1-ppois((y0-1),lambda))
 
 VOI1 <- -(1-Fy0)*(b+c) - Fy0*c
-VOI2 <- EYcond 
+VOI2 <- (1-Fy0)*EYcond 
 
 #Multicriteria value of information: y0=12
 cat(VOI1,VOI2,"\n")
@@ -55,7 +55,7 @@ k <- 0:(y0-1)
 EYcond <- (sum((k*dpois(k,lambda))))/(ppois((y0-1),lambda))
 
 VOI1 <- -(1-Fy0)*(c) + Fy0*(b-c)
-VOI2 <- -EYcond 
+VOI2 <- -Fy0*EYcond 
 
 #Multicriteria value of information: y0=7
 cat(VOI1,VOI2,"\n")
